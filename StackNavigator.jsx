@@ -7,6 +7,7 @@ import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
 import SavedScreen from "./screens/SavedScreen";
 import BookingsScreen from "./screens/BookingsScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function StackNavigator() {
   const Tab = createBottomTabNavigator();
@@ -23,10 +24,11 @@ export default function StackNavigator() {
             headerShown: false,
             tabBarIcon: ({ focused }) =>
               focused ? (
-                <Entypo name="home" size={24} color="black" />
+                <Entypo name="home" size={24} color="#daa520" />
               ) : (
-                <AntDesign name="home" size={24} color="black" />
+                <AntDesign name="home" size={24} color="#daa520"/>
               ),
+                            
           }}
         />
 
@@ -38,9 +40,9 @@ export default function StackNavigator() {
             headerShown: false,
             tabBarIcon: ({ focused }) =>
               focused ? (
-                <Entypo name="heart" size={24} color="black" />
+                <Entypo name="heart" size={24} color="#daa520" />
               ) : (
-                <AntDesign name="hearto" size={24} color="black" />
+                <AntDesign name="hearto" size={24} color="#daa520" />
               ),
           }}
         />
@@ -53,9 +55,9 @@ export default function StackNavigator() {
             headerShown: false,
             tabBarIcon: ({ focused }) =>
               focused ? (
-                <Ionicons name="notifications-sharp" size={24} color="black" />
+                <Ionicons name="notifications-sharp" size={24} color="#daa520" />
               ) : (
-                <Ionicons name="notifications-outline" size={24} color="black" />
+                <Ionicons name="notifications-outline" size={24} color="#daa520" />
               ),
           }}
         />
@@ -68,9 +70,9 @@ export default function StackNavigator() {
             headerShown: false,
             tabBarIcon: ({ focused }) =>
               focused ? (
-                <Ionicons name="person-add" size={24} color="black" />
+                <Ionicons name="person-add" size={24} color="#daa520" />
               ) : (
-                <Ionicons name="person-outline" size={24} color="black" />
+                <Ionicons name="person-outline" size={24} color="#daa520" />
               ),
           }}
         />
@@ -82,9 +84,11 @@ export default function StackNavigator() {
   }
 
   return (
-    <View>
-      <Text>StackNavigator</Text>
-    </View>
+    <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="Main" component={BottomTab} options={{headerShown:false}} />
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 }
 
