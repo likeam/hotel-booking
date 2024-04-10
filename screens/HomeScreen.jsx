@@ -74,6 +74,7 @@ const HomeScreen = () => {
           </Pressable>
           <Pressable style={{flexDirection:"row", alignItems:"center", gap:10, paddingHorizontal:10, borderColor:"#FFC72C", borderWidth:2, paddingVertical:15}}>
           <Feather name="calendar" size={24} color="black" />
+          
           <DatePicker
                 style={{
                   width: 350,
@@ -90,13 +91,14 @@ const HomeScreen = () => {
                     marginRight: "auto",
                   },
                   headerStyle: {
-                    backgroundColor: "#003580",
+                    backgroundColor: "#daa520",
                   },
                   contentText: {
                     fontSize: 15,
                     flexDirection: "row",
                     alignItems: "center",
                     marginRight: "auto",
+                    
                   },
                 }}
                
