@@ -1,4 +1,5 @@
 import {
+  Button,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -82,7 +83,7 @@ const HomeScreen = () => {
                   borderRadius: 0,
                   borderWidth: 0,
                   borderColor: "transparent",
-                }}
+                }} 
                 customStyles={{
                   placeholderText: {
                     fontSize: 15,
@@ -101,6 +102,14 @@ const HomeScreen = () => {
                     
                   },
                 }}
+                selectedBgColor="#0047AB"
+                customButton={(onConfirm) => customButton(onConfirm)}
+                onConfirm={(startDate, endDate) =>
+                  setSelectedDates(startDate, endDate)
+                }
+                allowFontScaling={false}
+                placeholder={"Select Your Dates"}
+                mode={"range"}
                
               />
           </Pressable>
