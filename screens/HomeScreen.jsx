@@ -1,5 +1,6 @@
 import {
   Button,
+  Image,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -12,6 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Ionicons, Feather } from "@expo/vector-icons";
 import Header from "../components/Header";
 import DatePicker from "react-native-date-ranges";
+import booking from "../assets/booking.png";
 import {
   BottomModal,
   ModalButton,
@@ -178,13 +180,89 @@ const HomeScreen = () => {
                   textAlign: "center",
                   fontSize: 15,
                   color: "white",
-                  fontWeight: "800",
+                  fontWeight: "500",
                 }}
               >
                 Search
               </Text>
             </Pressable>
           </View>
+          <Text style={{fontSize:17, fontWeight:"500", marginHorizontal:20 }}>
+            Travel More Spend Less
+          </Text>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <Pressable
+              style={{
+                width: 200,
+                height: 150,
+                marginTop: 10,
+                backgroundColor:"#daa520",
+                borderRadius: 10,
+                padding: 20,
+                marginHorizontal: 20,
+              }}
+            >
+              <Text
+               style={{
+                color:"white",
+                fontSize: 15,
+                fontWeight: "bold",
+                marginVertical: 7,
+              }}
+              >Genius</Text>
+              <Text   style={{ color: "white", fontSize: 15, fontWeight: "500" }}>Your at genius level one in our loyality Lavel</Text>
+            </Pressable>
+            <Pressable
+              style={{
+                width: 200,
+                height: 150,
+                marginTop: 10,
+                borderRadius: 10,
+                borderColor:"#daa520",
+                borderWidth:2,
+                padding: 20,
+                marginHorizontal: 20,
+              }}
+            >
+              <Text
+               style={{
+                fontSize: 15,
+                fontWeight: "bold",
+                marginVertical: 7,
+              }}
+              >15% Discount</Text>
+              <Text   style={{ color: "black", fontSize: 15, fontWeight: "500" }}>Complete 5 stays to unlock level 2</Text>
+            </Pressable>
+            <Pressable
+              style={{
+                width: 200,
+                height: 150,
+                marginTop: 10,
+                borderColor:"#daa520",
+                borderWidth:2,
+                borderRadius: 10,
+                padding: 20,
+                marginHorizontal: 20,
+              }}
+            >
+              <Text
+               style={{
+                fontSize: 15,
+                fontWeight: "bold",
+                marginVertical: 7,
+              }}
+              >10% Discount</Text>
+              <Text   style={{ color: "black", fontSize: 15, fontWeight: "500" }}> Enjoy Discounts at participating at properties worldwide</Text>
+            </Pressable>
+          </ScrollView>
+          
+          
+          <Pressable >
+            <Image
+              style={{ width: 200, height: 50, resizeMode: "cover" }}
+              source={booking}
+              />
+          </Pressable>
         </ScrollView>
       </View>
       <BottomModal
@@ -204,7 +282,7 @@ const HomeScreen = () => {
             />
           </ModalFooter>
         }
-        modalTitle={<ModalTitle title="Select rooms and guest" />}
+        modalTitle={<ModalTitle title="Select Rooms and Guests" />}
         modalAnimation={
           new SlideAnimation({
             slideFrom: "bottom",
@@ -223,7 +301,7 @@ const HomeScreen = () => {
               marginVertical: 15,
             }}
           >
-            <Text style={{ fontSize: 16, fontWeight: "500" }}>Rooms</Text>
+            <Text style={{ fontSize: 16, fontWeight: "500" }}>Room</Text>
             <Pressable 
             onPress={() => setRooms(Math.max(1, rooms-1)) }
             style={{
@@ -345,7 +423,7 @@ const HomeScreen = () => {
               marginVertical: 15,
             }}
           >
-            <Text style={{ fontSize: 16, fontWeight: "500" }}>Children</Text>
+            <Text style={{ fontSize: 16, fontWeight: "500" }}>Childs</Text>
             <Pressable 
             onPress={() => setChild(Math.max(1, rooms-1)) }
             style={{
@@ -395,9 +473,9 @@ const HomeScreen = () => {
                   paddingHorizontal:6,
                 }}
               >+</Text>
-            </Pressable>
-            
+            </Pressable>            
           </View>
+        
         </ModalContent>
       </BottomModal>
     </>
