@@ -86,6 +86,7 @@ const HomeScreen = () => {
             }}
           >
             <Pressable
+              onPress={() => navigation.navigate("Search")}
               style={{
                 flexDirection: "row",
                 alignItems: "center",
@@ -255,14 +256,19 @@ const HomeScreen = () => {
               <Text   style={{ color: "black", fontSize: 15, fontWeight: "500" }}> Enjoy Discounts at participating at properties worldwide</Text>
             </Pressable>
           </ScrollView>
-          
-          
-          <Pressable >
+          <Pressable 
+            style={{
+              marginTop: 40,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <Image
               style={{ width: 200, height: 50, resizeMode: "cover" }}
               source={booking}
               />
-          </Pressable>
+          </Pressable>      
+         
         </ScrollView>
       </View>
       <BottomModal

@@ -7,6 +7,7 @@ import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
 import SavedScreen from "./screens/SavedScreen";
 import BookingsScreen from "./screens/BookingsScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import SearchScreen from "./screens/SearchScreen";
 import { NavigationContainer } from "@react-navigation/native";
 
 export default function StackNavigator() {
@@ -87,6 +88,7 @@ export default function StackNavigator() {
     <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen name="Main" component={BottomTab} options={{headerShown:false}} />
+      <Stack.Screen name="Search" component={SearchScreen} options={{headerShown:false}} />
     </Stack.Navigator>
   </NavigationContainer>
   );
