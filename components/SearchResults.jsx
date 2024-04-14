@@ -1,4 +1,4 @@
-import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 
@@ -19,7 +19,7 @@ const SearchResults = ({data, input, setInput}) => {
                 <Pressable 
                 onPress={() =>{
                     setInput(item.place);
-                    navigation.navigate("Home", {input:input.place})
+                    navigation.navigate("Home", {input:item.place})
                 }}
                 style={{flexDirection:"row",alignItems:"center",marginVertical:10}}>
                     <View>

@@ -9,7 +9,7 @@ import {
   View,
 } from "react-native";
 import React, { useLayoutEffect, useState } from "react";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { Ionicons, Feather } from "@expo/vector-icons";
 import Header from "../components/Header";
 import DatePicker from "react-native-date-ranges";
@@ -31,6 +31,7 @@ const HomeScreen = () => {
   const [adults, setAdults] = useState(2);
   const [child, setChild] = useState(2);
   const [modalVisibile, setModalVisibile] = useState(false);
+  const route = useRoute();
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: true,
@@ -72,6 +73,37 @@ const HomeScreen = () => {
       />
     );
   };
+
+  console.log(route.params);
+
+  const searchPlace = (place) =>{
+    if(!route.params || !selectedDates){
+      Alert.alert(
+        "Invalid Details",
+        "Please enter all the details",
+        [
+          {
+            text: "Cancel",
+            onPress: () => console.log("Cancel Pressed"),
+            style: "cancel"
+          },
+          { text: "OK", onPress: () => console.log("OK Pressed") }
+        ],
+        { cancelable: false }
+      );
+    }
+    if(route.params && selectedDates){
+      navigation.navigate("Place", {
+        rooms:rooms,
+        adults:adults,
+        child:child,
+        selectedDates:selectedDates,
+        place:place,
+
+      })
+    }
+  }
+
   return (
     <>
       <View>
@@ -98,7 +130,7 @@ const HomeScreen = () => {
               }}
             >
               <Ionicons name="search" size={24} color="black" />
-              <TextInput placeholder="Enter your Destination" />
+              <TextInput placeholder={route?.params? route.params.input : "Enter your Destination"} />
             </Pressable>
             <Pressable
               style={{
@@ -168,6 +200,7 @@ const HomeScreen = () => {
               />
             </Pressable>
             <Pressable
+              onPress={() =>searchPlace(route?.params.input)}
               style={{
                 paddingHorizontal: 10,
                 borderColor: "#FFC72C",

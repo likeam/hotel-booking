@@ -9,6 +9,7 @@ import BookingsScreen from "./screens/BookingsScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import SearchScreen from "./screens/SearchScreen";
 import { NavigationContainer } from "@react-navigation/native";
+import PlaceScreen from "./screens/PlaceScreen";
 
 export default function StackNavigator() {
   const Tab = createBottomTabNavigator();
@@ -89,6 +90,7 @@ export default function StackNavigator() {
     <Stack.Navigator>
       <Stack.Screen name="Main" component={BottomTab} options={{headerShown:false}} />
       <Stack.Screen name="Search" component={SearchScreen} options={{headerShown:false}} />
+      <Stack.Screen name="Place" component={PlaceScreen} options={{headerShown:false}} />
     </Stack.Navigator>
   </NavigationContainer>
   );
