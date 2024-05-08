@@ -470,7 +470,7 @@ const PlaceScreen = () => {
 
   const route = useRoute();
   const navigation = useNavigation();
-  const [modalVisibile, setModalVisibile] = useState(false);
+  const [modalVisibile, setModalVisibile] = useState(true);
   const [selectedFilter, setSelectedFilter] = useState([]);
  
   useLayoutEffect(() => {
@@ -495,7 +495,7 @@ const PlaceScreen = () => {
   }, []);
 
   return (
-    <View>
+    <View style={{flexDirection: "column", justifyContent:"center"}}>
       <Pressable   style={{
           flexDirection: "row",
           alignItems: "center",
@@ -506,7 +506,7 @@ const PlaceScreen = () => {
         }}
       >
         <Pressable
-          onPress={() =>setModalVisibile(!modalVisibile)}
+          //onPress={() =>setModalVisibile(!modalVisibile)}
           style={{ flexDirection: "row", alignItems: "center" }}
         >
           <Octicons name="arrow-switch" size={24} color="gray" />
@@ -541,6 +541,7 @@ const PlaceScreen = () => {
           }))
           }
       </ScrollView>
+      <PropertyCard />
     </View>
   )
 }
