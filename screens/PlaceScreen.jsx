@@ -456,7 +456,7 @@ const PlaceScreen = () => {
             },
             {
               id: "205",
-              name: "Deluxe king Room",
+              name: "Deluxe king Rooms",
               size: 490,
               refundable: "refundable",
               payment: "Pay at the property",
